@@ -51,6 +51,7 @@ class ResepController extends Controller
             $data = [
                 'signa_id' => $i->signa_id,
                 'resep_kode' => $resepKode,
+                'resep_nama' => $i->namaRacikan,
                 'resep_jenis' => $i->jenis,
             ];
             $id = Resep_m::insertGetId($data);
