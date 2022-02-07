@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-md-12 mb-2">
                         <div class="table-responsive">
-                            <table class="table ">
+                            <table class="table dttables">
                                 <thead>
                                     <tr>
                                         <th class="text-center">NO</th>                                        
