@@ -1,5 +1,15 @@
 # resep-obat
+
+## Requirements 
+- PHP >= 7.4
  
+## Standard Build With
+- LARAVEL 8 
+- MYSQL
+- BOOSTRAP 5
+- FONT AWESOME 6
+
+## Installation
 - Download or Clone repository
 - Open root folder delete `composer.json.lock`
 - Open terminal inside root folder
