@@ -15,3 +15,7 @@ function setSelect2(id) {
         },
     });
 }
+
+$(document).ready(function() {
+    $('.dttables').DataTable();
+} );

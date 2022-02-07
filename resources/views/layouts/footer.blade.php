@@ -2,6 +2,8 @@
 <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('select2/select2.min.js') }}"></script>
 <script src="{{ asset('toastr/toastr.min.js') }}"></script>
+<script src="{{ asset('datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('datatables/dataTables.bootstrap5.min.js') }}"></script>
 <script>
     const base_url = '<?= url('/') ?>';
     $.ajaxSetup({
