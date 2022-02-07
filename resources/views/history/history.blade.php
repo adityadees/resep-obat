@@ -28,7 +28,7 @@
                                         <td class="text-center">{{($v+1)}}</td>
                                         <td class="text-center">{{date('d-m-Y H:i:s',strtotime($i->created_at))}}</td>
                                         <td class="text-center">{{$i->resep_kode}}</td>
-                                        <td class="text-center"><button class="btn btn-info text-white btn-sm"><i class="fas fa-eye"></i></button></td>
+                                        <td class="text-center"><a href="{{url('/history/cetak/'.$i->resep_kode)}}" class="btn btn-info text-white btn-sm"><i class="fas fa-print"></i></a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

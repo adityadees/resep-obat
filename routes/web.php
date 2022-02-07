@@ -25,3 +25,4 @@ Route::get('/logs', [LogsController::class, 'index'])->name('logs');
 Route::get('/obat/getData/{obat_id}', [ObatController::class, 'getData'])->name('obat.getData');
 Route::get('/signa/getData', [SignaController::class, 'getData'])->name('signa.getData');
 Route::post('/resep/create', [ResepController::class, 'create'])->name('resep.create');
+Route::get('/history/cetak/{resep_kode}', [HistoryController::class, 'cetak'])->name('history.cetak');
