@@ -12,6 +12,7 @@
     <link href="{{ asset('select2/select2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('select2/select2-bootstrap-5-theme.min.css') }}" rel="stylesheet">
     <link href="{{ asset('toastr/toastr.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('datatables/dataTables.bootstrap5.min.css') }}" rel="stylesheet">
 </head>
 
 <body>
