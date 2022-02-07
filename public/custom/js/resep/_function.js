@@ -89,51 +89,51 @@ function clearForm() {
     $("input[name='qtyobat[]']").map(function () { return $(this).val(0); });
     $("input[name='stokobat[]']").map(function () { return $(this).val(0); });
     $("#appendRacikan").html(`
-    <tr>
-    <td colspan="2">
+        <tr>
+        <td colspan="2">
         <div class="form-group">
-            <label>NAMA RACIKAN</label>
-            <input type="text" class="form-control" placeholder="Masukan nama racikan" id="nama-racikan">
-            <small id="nama-error" class="text-danger"></small>
-            </div>
-    </td>
-    <td colspan="2">
-        <div class="form-group">
-            <label>SIGNA</label>
-            <select class="form-control select-2 select-signa"></select>
-            <small id="signa-error" class="text-danger"></small>
+        <label>NAMA RACIKAN</label>
+        <input type="text" class="form-control" placeholder="Masukan nama racikan" id="nama-racikan">
+        <small id="nama-error" class="text-danger"></small>
         </div>
-    </td>
-    </tr>
-    <tr>
-            <td width="50%">
-                <div class="form-group">
-                    <label>OBAT</label>
-                    <select class="form-control select-2-1 changeSelect select-obtalkes1" name="obat[]" data-rowidobat="1"></select>
-                    <small id="obat-error1" class="text-danger"></small>
-                </div>
-            </td>
-            <td width="20%">
-                <div class="form-group">
-                    <label>Stok</label>
-                    <input type="number" class="form-control" value="0" id="stok-obat1" readonly name="stokobat[]" data-rowidstok="1">
-                    <small id="stok-error1" class="text-danger"></small>
-                </div>
-            </td>
-            <td width="20%">
-                <div class="form-group">
-                    <label>QTY</label>
-                    <input type="number" class="form-control" value="0" id="qty-obat1" disabled name="qtyobat[]" data-rowidqty="1">
-                    <small id="qty-error1" class="text-danger"></small>
-                </div>
-            </td>
-            <td width="10%">
-                <div class="form-group">
-                    <br>
-                    <button class="btn btn-primary addRacikan" type="button" title="Add More"><i class="fas fa-plus"></i></button>
-                </div>
-            </td>
-    </tr>`);
+        </td>
+        <td colspan="2">
+        <div class="form-group">
+        <label>SIGNA</label>
+        <select class="form-control select-2 select-signa"></select>
+        <small id="signa-error" class="text-danger"></small>
+        </div>
+        </td>
+        </tr>
+        <tr>
+        <td width="50%">
+        <div class="form-group">
+        <label>OBAT</label>
+        <select class="form-control select-2-1 changeSelect select-obtalkes1" name="obat[]" data-rowidobat="1"></select>
+        <small id="obat-error1" class="text-danger"></small>
+        </div>
+        </td>
+        <td width="20%">
+        <div class="form-group">
+        <label>Stok</label>
+        <input type="number" class="form-control" value="0" id="stok-obat1" readonly name="stokobat[]" data-rowidstok="1">
+        <small id="stok-error1" class="text-danger"></small>
+        </div>
+        </td>
+        <td width="20%">
+        <div class="form-group">
+        <label>QTY</label>
+        <input type="number" class="form-control" value="0" id="qty-obat1" disabled name="qtyobat[]" data-rowidqty="1">
+        <small id="qty-error1" class="text-danger"></small>
+        </div>
+        </td>
+        <td width="10%">
+        <div class="form-group">
+        <br>
+        <button class="btn btn-primary addRacikan" type="button" title="Add More"><i class="fas fa-plus"></i></button>
+        </div>
+        </td>
+        </tr>`);
     tempRacikan = [];
     getObat('undefined', '1');
     getSigna();
@@ -151,18 +151,18 @@ function cekInput() {
         let rowId = $(this).data("rowidobat");
         return cekObat($(this).val(), rowId);
     }).get(),
-        resCekQty = $("input[name='qtyobat[]'] ").map(function () {
-            let rowId = $(this).data("rowidqty");
-            return cekQty($(this).val(), rowId);
-        }).get(),
-        resCekStok = $("input[name='stokobat[]'] ").map(function () {
-            let rowId = $(this).data("rowidstok");
-            return cekStok($(this).val(), rowId);
-        }).get(),
-        signa_id = $(".select-signa").val(),
-        resCekSigna = cekSigna(signa_id),
-        nama = $("#nama-racikan").val(),
-        resCekNama = cekNama(nama);
+    resCekQty = $("input[name='qtyobat[]'] ").map(function () {
+        let rowId = $(this).data("rowidqty");
+        return cekQty($(this).val(), rowId);
+    }).get(),
+    resCekStok = $("input[name='stokobat[]'] ").map(function () {
+        let rowId = $(this).data("rowidstok");
+        return cekStok($(this).val(), rowId);
+    }).get(),
+    signa_id = $(".select-signa").val(),
+    resCekSigna = cekSigna(signa_id),
+    nama = $("#nama-racikan").val(),
+    resCekNama = cekNama(nama);
 
     if ((resCekObat.includes(false) == true ? false : true) && resCekSigna == true && (resCekQty.includes(false) == true ? false : true) && (resCekStok.includes(false) == true ? false : true)) return true;
     return false;
@@ -227,6 +227,7 @@ function saveResep(nonracik, racik) {
         success: function (data) {
             if (data.status == true) {
                 toastr.success('Berhasil menyimpan data. Mohon tunggu, anda akan diarahkan kehalaman lain', 'BERHASIL!');
+                location.reload();
             } else {
                 toastr.error('Gagal menyimpan data. Mohon tunggu,  halaman akan di refresh', 'GAGAL!');
             }
